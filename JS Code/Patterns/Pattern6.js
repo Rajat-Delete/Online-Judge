@@ -18,34 +18,42 @@ function printPattern(n){
     //upper part
     for(let i=1;i<=n;i++){
         let str = '';
-        //printing the spaces 
-        for(let spaces=1;spaces<=(n-i);spaces++){
-            str =str + ' ';
+        //printing the left side of upper pattern
+        //n-row spaces , row stars
+        for(let spaces = 1;spaces <= (n-i);spaces++){
+            str = str+' ';
         }
-        //printing the left side of the pattern
-        for(let stars= 1;stars<=i;stars++){
-            str = str + '*';
+        //pattern of left side 
+        //for every row number we have row stars
+        for(let stars = 1;stars <=i ;stars++){
+            str = str+'*';
         }
+
         //printing the right side of the pattern
-        for(let rightstars =1;rightstars<i;rightstars++){
-            str = str+'*'
-        }
+        //for every row we have to print row - 1 stars
+        for(let stars = 1;stars < i;stars++){
+            str = str + '*'
+        } 
         console.log(str);
     }
-
-    //lower part
-    for(let row = 1;row<n;row++){
-        //printing the spaces
-        //first we have to print row spaces followed by stars, rows will be n-1, spaces will be i for ith row and stars will be (n - 2) for every row
+    //printing the lower side of the pattern
+    //rows will be (i-1)
+    for(let i =1;i<n;i++){
         let str = '';
-        for(let spaces=1 ; spaces<=n/2+row-1;spaces++){
-            str = str + ' ';
-        }
-
-        for(let stars = n-(2*(row-1)) ; stars>0;stars--){
-            str = str + '*';
-        }
-        console.log(str);
+    //printing the lower left side of the pattern
+    //spaces will always be row number , stars will always be (n-row)stars
+    for(spaces = 1;spaces <=i;spaces++){
+        str = str + ' ';
+    }
+    for(let stars =1;stars <=(n-i);stars++){
+        str = str + '*';
+    }
+    //printing the right side of the pattern
+    //stars will be (n-2*i) and keeps and decreasing
+    for(let stars = 1;stars <= (n -i-1);stars++){
+         str = str+'*';
+     }
+    console.log(str);
     }
 }
 
