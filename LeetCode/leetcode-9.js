@@ -23,24 +23,21 @@ Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
  
 */
 
-function checkPalindrone(n){
-    let actualnumber = n;
-    let reverseStr = '';
-    let remainder ;
-    let quotient;
-    while(n!==0){
-        remainder = n % 10;
-        console.log('remainder',remainder);
-        reverseStr = reverseStr + remainder;
-        quotient = parseInt(n /10);
-        console.log('quotient',quotient);
-        n = quotient;
-    }
-    if(reverseStr == actualnumber){
-        return true;
-    }else{
-        return false;
-    }
-}
+//so every string in js is basically a sequence of charcaters, so we can use 2 pointers one from left and right 
+//and check if i==j, if things are equal we can check the internal substring. 
 
-checkPalindrone(-121);
+function checkPalindrone(str){
+    str = str+'';
+    for(let i=0,j=str.length-1;i<=j;i++,j--){
+        let leftChar = str[i];
+        let rightChar = str[j];
+        console.log(leftChar , rightChar);
+        if(leftChar == rightChar){
+            continue;
+        }else{
+            return false;        
+        }
+        }
+        return true;
+}
+console.log(checkPalindrone(11));
