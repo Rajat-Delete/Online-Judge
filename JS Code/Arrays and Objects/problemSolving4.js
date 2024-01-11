@@ -7,7 +7,7 @@ We should not create a new array.
 */
 
 function reverse(arr){
-    for(let i=0,j=arr.length;i<=j;){
+    for(let i=0,j=arr.length-1;i<=j;){
         let temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
