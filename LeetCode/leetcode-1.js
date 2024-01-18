@@ -48,4 +48,31 @@ var twoSum = function(nums, target) {
     }
 };
 
-console.log(twoSum([2,7,11,15],9));
+
+//optimised approach
+
+function fn(x,y){
+    return x[0] - y[0];
+}
+var twoSumOptimised =  function (nums, target){
+    for(let i = 0;i<nums.length;i++){
+        nums[i]= [nums[i],i];
+    }
+    nums.sort(fn);
+    console.log(nums);
+    let start = 0;
+    let end  = nums.length-1;
+    while(start<end){
+        if(nums[start][0] + nums[end][0] == target){
+            return [nums[start][1] , nums[end][1]];
+        }else if (nums[start][0] + nums[end][0] > target){
+            end--;
+        }else{
+            start++;
+        }
+    }
+
+}
+
+
+console.log(twoSumOptimised([7,2,15,11],9));
