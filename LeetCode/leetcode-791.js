@@ -63,3 +63,6 @@ function custom(order,s){
 
 
 console.log(custom('kqep','pekeq'));
+
+
+s.split('').sort((a,b) => order.indexOf(a)-order.indexOf(b) )

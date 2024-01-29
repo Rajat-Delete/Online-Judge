@@ -49,7 +49,7 @@ var twoSum = function(nums, target) {
 };
 
 
-//optimised approach
+//optimised approach , less than 10power8 operations
 
 function fn(x,y){
     return x[0] - y[0];
